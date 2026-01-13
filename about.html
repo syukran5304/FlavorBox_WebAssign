@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>FlavorBox | About</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI',sans-serif;
+  background:url("background.2jpg.jpg") no-repeat center/cover;
+  min-height:100vh;
+}
+
+/* HEADER */
+/* HEADER */
+header{
+    background-color:#333;
+    color:#fff;
+    padding:20px;
+}
+
+/* LOGO */
+.logo-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.logo-container svg{
+    width:40px;
+}
+
+h1{
+    font-size:30px;
+    font-weight:600;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1100px;
+    margin:auto;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+.menu li a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:500;
+}
+ .menu li a:hover{
+      color:#ff5722;
+    }
+
+/* DROPDOWN */
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:#444;
+    list-style:none;
+    top:25px;
+    min-width:150px;
+}
+
+.dropdown-content li a{
+    display:block;
+    padding:8px 12px;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+/* SEARCH */
+.search{
+    display:flex;
+}
+
+.search input{
+    padding:10px;
+    border:none;
+    width:200px;
+    margin: 5px 0 0;
+    border-radius:10px 0 0 10px;
+    outline:none;
+}
+
+.search button{
+    padding:10px 20px;
+    background-color:#ff5722;
+    border:none;
+    cursor:pointer;
+    color:#fff;
+    font-weight:600;
+    border-radius:0 10px 10px 0;
+}
+
+/* TEAM */
+main{
+  padding:60px 20px;
+}
+
+.container{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:white;
+  width:220px;
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+
+.card:hover{transform:translateY(-10px);}
+
+.avatar{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  border:3px solid #764ba2;
+  margin-bottom:15px;
+}
+
+/* TABLE */
+table{
+  width:80%;
+  margin:20px auto;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:15px;
+  border:1px solid #ddd;
+  text-align:center;
+}
+
+th{
+  background:#333;
+  color:white;
+}
+tr:nth-child(even){background:#d3b49ad8;}
+tr:nth-child(odd){background:#d3b49ad8;}
+tr:hover{background:#d8baa1;}
+
+/* FORM */
+.form-container{
+  background:white;
+  padding:25px;
+  max-width:500px;
+  margin:40px auto;
+  border-radius:10px;
+  animation:fadeIn 1s;
+  position:relative;
+}
+
+label{
+  font-weight:bold;
+  display:block;
+  margin-top:10px;
+}
+
+input,textarea,select,button{
+  width:100%;
+  padding:8px;
+  margin-top:5px;
+}
+
+.group input{
+  width:auto;
+  margin-right:5px;
+}
+
+button{
+  margin-top:15px;
+  background:#28a745;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+.error{color:red;}
+
+/* FEEDBACK LIST */
+.feedback-list{
+  max-width:700px;
+  margin:30px auto;
+}
+
+.feedback-item{
+  background:white;
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:15px;
+  animation:slideIn 0.6s;
+}
+
+/* POPUP */
+.feedback-popup{
+  position:fixed;
+  top:40%;
+  right:-350px;
+  width:300px;
+  background:white;
+  padding:20px;
+  border-radius:10px 0 0 10px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  transition:0.6s ease;
+  z-index:999;
+}
+
+.feedback-popup.show{right:0;}
+
+.feedback-popup h4{
+  color:#28a745;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes slideIn{
+  from{transform:translateY(20px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+
+/* FOOTER */
+footer{
+  background:#222;
+  color:#ddd;
+  padding:40px 20px 20px;
+  margin-top:40px;
+}
+
+.footer-container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:30px;
+}
+
+.footer-box h3{
+  margin-bottom:15px;
+  text-align: center;
+  color:#fff;
+}
+
+.footer-box p,
+.footer-box a{
+  font-size:14px;
+  color:#bbb;
+  text-align: center;
+  text-decoration:none;
+  display:block;
+  margin-bottom:8px;
+}
+
+.footer-box a:hover{
+  color:#ff5722;
+}
+
+.footer-bottom{
+  text-align:center;
+  border-top:1px solid #444;
+  margin-top:30px;
+  padding-top:15px;
+  font-size:13px;
+  color:#999;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-container">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 8c-8 0-14 6-14 14a12 12 0 0 0 4 9c-1 2-1 5 3 7 3 1 5 0 6-2 1 2 3 3 6 2 4-2 4-5 3-7a12 12 0 0 0 4-9c0-8-6-14-14-14z" fill="#fff"/>
+            <circle cx="32" cy="40" r="6" fill="#ff5722"/>
+        </svg>
+        <h1>FlavorBox</h1>
+    </div>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="index.html">Utama</a></li>
+            <li><a href="resipi.html">Resipi</a>  
+            <li><a href="about.html">Tentang Kami</a></li>
+        </ul>
+
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Cari resipi...">
+            <button id="searchButton">🔎 Cari</button>
+        </div>
+    </nav>
+</header>
+<main>
+  <div class="container">
+    <div class="card"><img src="teha.jpg" class="avatar"><h3>Nurfatihah</h3><p>fatihah@gmail.com</p></div>
+    <div class="card"><img src="SYUKRAN PIC.jpg" class="avatar"><h3>Syukran</h3><p>syukran@gmail.com</p></div>
+    <div class="card"><img src="balqis.jpg" class="avatar"><h3>Balqis</h3><p>balqis@gmail.com</p></div>
+  </div>
+</main>
+
+<table>
+<tr><th>Feature</th><th>Our Website</th><th>Other Websites</th></tr>
+<tr><td>Recipe Categories</td><td>Extensive</td><td>Limited</td></tr>
+<tr><td>User Ratings</td><td>Yes</td><td>Sometimes</td></tr>
+<tr><td>Ingredient Filters</td><td>Advanced</td><td>Basic</td></tr>
+<tr><td>Recipe Submission</td><td>Allowed</td><td>Rare</td></tr>
+<tr><td>Mobile Friendly</td><td>Fully</td><td>Partial</td></tr>
+<tr><td>Video Tutorials</td><td>Available</td><td>Few</td></tr>
+</table>
+
+<div class="form-container">
+<h2>User Feedback</h2>
+
+<form id="feedbackForm">
+<label>Name</label><input type="text" id="name">
+<label>Email</label><input type="email" id="email">
+
+<label>Visit Frequency</label>
+<select id="frequency">
+<option value="">-- Select --</option>
+<option>Daily</option>
+<option>Weekly</option>
+<option>Monthly</option>
+</select>
+
+<label>Rating</label>
+<div class="group">
+<input type="radio" name="rating" value="Excellent"> Excellent
+<input type="radio" name="rating" value="Good"> Good
+<input type="radio" name="rating" value="Poor"> Poor
+</div>
+
+<label>What did you like?</label>
+<div class="group">
+<input type="checkbox" value="Design"> Design
+<input type="checkbox" value="Content"> Content
+<input type="checkbox" value="Speed"> Speed
+</div>
+
+<label>Feedback</label>
+<textarea id="feedback"></textarea>
+
+<p class="error" id="errorMsg"></p>
+
+<button type="submit">Submit</button>
+<button type="reset" style="background:#dc3545;">Reset</button>
+</form>
+</div>
+
+<div class="feedback-list" id="feedbackList"></div>
+
+<!-- POPUP -->
+<div class="feedback-popup" id="feedbackPopup">
+  <h4>Thank you!</h4>
+  <div id="popupContent"></div>
+</div>
+
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>FlavorBox</h3>
+      <p>Platform resipi ringkas untuk inspirasi masakan harian.</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Menu</h3>
+      <a href="index.html">Utama</a>
+      <a href="resipi.html">Resipi</a>
+      <a href="about.html">Tentang Kami</a>
+    </div>
+
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <a href="flavorbox@gmail.com"><i class="fa fa-envelope"></i></a>
+      <a href="https://www.instagram.com/m_syukranz34/"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 FlavorBox || All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+document.getElementById("feedbackForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const frequency = document.getElementById("frequency").value;
+  const feedback = document.getElementById("feedback").value.trim();
+  const rating = document.querySelector('input[name="rating"]:checked');
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  const errorMsg = document.getElementById("errorMsg");
+
+  if (!name || !email || !frequency || !rating || !feedback) {
+    errorMsg.textContent = "Please fill in all required fields.";
+    return;
+  }
+
+  let likes = [];
+  checkboxes.forEach(cb => likes.push(cb.value));
+
+  errorMsg.textContent = "";
+
+  /* Add feedback to list */
+  const div = document.createElement("div");
+  div.className = "feedback-item";
+  div.innerHTML = `
+    <strong>${name}</strong> (${email})<br>
+    <b>Frequency:</b> ${frequency}<br>
+    <b>Rating:</b> ${rating.value}<br>
+    <b>Liked:</b> ${likes.join(", ") || "None"}<br>
+    <b>Feedback:</b> ${feedback}
+  `;
+  document.getElementById("feedbackList").prepend(div);
+
+  /* Popup animation */
+  const popup = document.getElementById("feedbackPopup");
+  document.getElementById("popupContent").innerHTML = `"${feedback}"`;
+  popup.classList.add("show");
+
+  setTimeout(() => popup.classList.remove("show"), 4000);
+
+  this.reset();
+});
+</script>
+
+</body>
+</html>
